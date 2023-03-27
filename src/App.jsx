@@ -1,10 +1,5 @@
-import { LoginPage } from "./pages/LoginPage"
-
 export const App = () => {
-
   return (
-    <LoginPage>
-
-    </LoginPage>
+    <h1>Hello World</h1>
   )
 }

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loginApp {
+  @apply flex justify-center items-center w-screen h-screen bg-blue-500
+}

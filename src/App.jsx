@@ -1,5 +1,7 @@
+import { LoginPage } from "./pages/LoginPage"
+
 export const App = () => {
   return (
-    <h1>Hello World</h1>
+    <LoginPage />
   )
 }

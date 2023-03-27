@@ -1,0 +1,11 @@
+.logo {
+  @apply flex justify-center gap-2 pb-12 pt-8
+}
+
+.logo img {
+  @apply w-14 mr-2
+}
+
+.title {
+  @apply text-3xl
+}

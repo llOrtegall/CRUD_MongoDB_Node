@@ -1,18 +1,19 @@
 import { useState } from "react";
 
-export function TwitterFollowCard({ children, userName = 'midudev', name, isFollowing }) {
+export function TwitterFollowCard({ children, userName }) {
 
-  confirstxt = isFollowing ? 'Siguiendo' : 'Seguir'
+  const [isFollowing, setIsFollowing] = useState(false)
+  const text = isFollowing ? 'Siguiendo' : 'Seguir'
   const buttonClasseName = isFollowing
     ? 'twitter-info-button is-following'
-    : 'twitter-info-button'
+    : 'twitter-info-button';
+  const handleClik = () => {
+    setIsFollowing(!isFollowing)
+  }
 
   const imageSrc = `https://unavatar.io/${userName}`
-
   return (
-
     //* TODO LO QUE ESTÁ AQUÍ SON ELEMENTOS 
-
     <article className='twitter'>
       <header className='twitter-header'>
         <img className='twitter-avatar'
@@ -24,13 +25,13 @@ export function TwitterFollowCard({ children, userName = 'midudev', name, isFoll
         </div>
       </header>
       <aside>
-        <button className={buttonClasseName}>
+        <button className={buttonClasseName} onClick={handleClik}>
           {/* <<<------ CHILDREN */}
           {text}
         </button>
       </aside>
     </article>
 
-    //* TODO LO QUE ESTÁ AQUÍ SON ELEMENTOS 
+    //* 
   )
 }

@@ -2,8 +2,12 @@ import { useState } from "react";
 
 export function TwitterFollowCard({ children, userName }) {
 
-  const [isFollowing, setIsFollowing] = useState(false)
-  const text = isFollowing ? 'Siguiendo' : 'Seguir'
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  console.log('render follo', userName)
+
+  const text = isFollowing ? 'Siguiendo' : 'Seguir';
+
   const buttonClasseName = isFollowing
     ? 'twitter-info-button is-following'
     : 'twitter-info-button';

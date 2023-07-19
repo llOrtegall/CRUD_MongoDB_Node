@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import { TwitterFollowCard } from './TwitterFollowCard'
 
@@ -7,14 +8,24 @@ export const App = () => {
   // const midudev = { isFollowing: true, userName: 'midudev' }
   // const ivanOrtega = { isFollowing: false, userName: 'llortegall' }
 
+  const [name, setName] = useState('midudev')
+  // ? CUANDO SE RENDERIZA EL PADRE LO HARAN TAMBIEN SUS HIJOS
+
+  console.log('render with: ', name)
+
   return (
     <section className='App'>
       <TwitterFollowCard userName='midudev'>
         Miguel Angel Duran
       </TwitterFollowCard>
-      <TwitterFollowCard userName='llortegall'>
+      <TwitterFollowCard userName={name}>
         Ivan Ortega Garzon
       </TwitterFollowCard>
+
+      <button onClick={() => setName('llortegall')}>
+        Cambiar Nombre
+      </button>
     </section>
+
   )
 }

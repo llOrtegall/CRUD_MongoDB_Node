@@ -1,4 +1,4 @@
-export function TwitterFollowCard({ children, userName, name, isFollowing }) {
+export function TwitterFollowCard({ children, userName = 'midudev', name, isFollowing }) {
 
   const imageSrc = `https://unavatar.io/${userName}`
 

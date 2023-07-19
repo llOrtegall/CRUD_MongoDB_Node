@@ -9,10 +9,10 @@ export const App = () => {
 
   return (
     <section className='App'>
-      <TwitterFollowCard isFollowing={true} userName='midudev'>
+      <TwitterFollowCard userName='midudev'>
         Miguel Angel Duran
       </TwitterFollowCard>
-      <TwitterFollowCard isFollowing={true} userName='llortegall'>
+      <TwitterFollowCard userName='llortegall'>
         Ivan Ortega Garzon
       </TwitterFollowCard>
     </section>

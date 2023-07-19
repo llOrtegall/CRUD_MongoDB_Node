@@ -8,21 +8,19 @@ export const App = () => {
   // const midudev = { isFollowing: true, userName: 'midudev' }
   // const ivanOrtega = { isFollowing: false, userName: 'llortegall' }
 
-  const [name, setName] = useState('midudev')
+  // const [name, setName] = useState('midudev')
   // ? CUANDO SE RENDERIZA EL PADRE LO HARAN TAMBIEN SUS HIJOS
-
-  console.log('render with: ', name)
 
   return (
     <section className='App'>
-      <TwitterFollowCard userName='midudev'>
+      <TwitterFollowCard initialisFollowing userName='midudev'>
         Miguel Angel Duran
       </TwitterFollowCard>
-      <TwitterFollowCard userName={name}>
+      <TwitterFollowCard initialisFollowing={false} userName='llortegall'>
         Ivan Ortega Garzon
       </TwitterFollowCard>
 
-      <button onClick={() => setName('llortegall')}>
+      <button>
         Cambiar Nombre
       </button>
     </section>

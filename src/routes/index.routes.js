@@ -34,9 +34,11 @@ router.get("/edit/:id", async (req, res) => {
 });
 
 // ? utilizado para actualizar la tareas sin embargo no es buena practica hacerlo por este metodo
-router.post("/edit/:id", (req, res) => {
-  console.log(req.body);
-  res.send("recibido");
+router.post("/edit/:id", async (req, res) => {
+  const { id } = req.params;
+
+  await Task.findByIdAndUpdate(id, req.body);
+  res.redirect("/");
 });
 
 export default router;

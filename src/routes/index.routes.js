@@ -24,8 +24,19 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
-router.get("/edit", (req, res) => {
-  res.render("edit");
+router.get("/edit/:id", async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id).lean();
+    res.render("edit", { task });
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+// ? utilizado para actualizar la tareas sin embargo no es buena practica hacerlo por este metodo
+router.post("/edit/:id", (req, res) => {
+  console.log(req.body);
+  res.send("recibido");
 });
 
 export default router;

@@ -2,6 +2,7 @@ import express from "express";
 import { create } from "express-handlebars";
 import indexRoutes from "./routes/index.routes";
 import path from "path";
+import morgan from "morgan";
 
 const app = express();
 
@@ -13,6 +14,10 @@ const exphbs = create({
   partialsDir: path.join(app.get("views"), "partials"),
   defaultLayout: "main",
 });
+
+// * middleware
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
 
 app.engine(".hbs", exphbs.engine);
 app.set("view engine", ".hbs");

@@ -11,9 +11,13 @@ router.get("/", async (req, res) => {
 
 // TODO: agregando las tareas y insertandolas en la base de datos
 router.post("/tasks/add", async (req, res) => {
-  const tasks = Task(req.body);
-  await tasks.save();
-  res.redirect("/");
+  try {
+    const tasks = Task(req.body);
+    await tasks.save();
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.get("/about", (req, res) => {

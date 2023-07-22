@@ -50,4 +50,8 @@ router.get("/delete/:id", async (req, res) => {
   res.redirect("/");
 });
 
+router.get("/toggleDone/:id", async (req, res) => {
+  const { id } = req.params;
+});
+
 export default router;

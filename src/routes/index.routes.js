@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router, request } from "express";
 import Task from "../models/Task";
 
 const router = Router();
@@ -37,7 +37,16 @@ router.get("/edit/:id", async (req, res) => {
 router.post("/edit/:id", async (req, res) => {
   const { id } = req.params;
 
-  await Task.findByIdAndUpdate(id, req.body);
+  await Task.findByIdAndUpdate(id);
+
+  res.redirect("/");
+});
+
+// ? para eliminar las peticiones
+router.get("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+  await Task.findByIdAndDelete(id);
+  // * Realiza la redireción
   res.redirect("/");
 });
 

@@ -57,7 +57,9 @@ router.get("/toggleDone/:id", async (req, res) => {
 
   task.done = !task.done;
 
-  res.send("toogle");
+  await task.save();
+
+  res.redirect("/");
 });
 
 export default router;

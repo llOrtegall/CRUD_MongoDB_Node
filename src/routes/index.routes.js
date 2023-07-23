@@ -1,23 +1,12 @@
 import { Router, request } from "express";
-import Task from "../models/Task";
+import { renderTask } from "../controllers/task.controller";
 
 const router = Router();
 
-router.get("/", async (req, res) => {
-  const tasks = await Task.find().lean();
-  res.render("index", { tasks });
-});
+router.get("/", renderTask);
 
 // TODO: agregando las tareas y insertandolas en la base de datos
-router.post("/tasks/add", async (req, res) => {
-  try {
-    const tasks = Task(req.body);
-    await tasks.save();
-    res.redirect("/");
-  } catch (error) {
-    console.log(error);
-  }
-});
+router.post("/tasks/add");
 
 router.get("/about", (req, res) => {
   res.render("about");

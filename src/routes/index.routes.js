@@ -1,5 +1,9 @@
 import { Router, request } from "express";
-import { createTask, renderTask } from "../controllers/task.controller";
+import {
+  createTask,
+  editTask,
+  renderTask,
+} from "../controllers/task.controller";
 
 const router = Router();
 
@@ -11,7 +15,7 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
-router.get("/edit/:id");
+router.get("/edit/:id", editTask);
 
 // ? utilizado para actualizar la tareas sin embargo no es buena practica hacerlo por este metodo
 router.post("/edit/:id", async (req, res) => {

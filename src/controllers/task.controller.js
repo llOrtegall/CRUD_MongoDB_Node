@@ -18,7 +18,7 @@ export const createTask = async (req, res) => {
 };
 
 // TODO: Utilizado para editar las tareas
-export const editTask = async (req, res) => {
+export const RendereditTask = async (req, res) => {
   try {
     const task = await Task.findById(req.params.id).lean();
     res.render("edit", { task });

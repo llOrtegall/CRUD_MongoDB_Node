@@ -5,7 +5,6 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   const tasks = await Task.find().lean();
-
   res.render("index", { tasks });
 });
 
@@ -36,9 +35,7 @@ router.get("/edit/:id", async (req, res) => {
 // ? utilizado para actualizar la tareas sin embargo no es buena practica hacerlo por este metodo
 router.post("/edit/:id", async (req, res) => {
   const { id } = req.params;
-
   await Task.findByIdAndUpdate(id);
-
   res.redirect("/");
 });
 
@@ -52,13 +49,9 @@ router.get("/delete/:id", async (req, res) => {
 
 router.get("/toggleDone/:id", async (req, res) => {
   const { id } = req.params;
-
   const task = await Task.findById(id);
-
   task.done = !task.done;
-
   await task.save();
-
   res.redirect("/");
 });
 

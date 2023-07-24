@@ -14,12 +14,12 @@ router.get("/", renderTask);
 
 router.post("/tasks/add", createTask);
 
+router.get("/task/:id/toggleDone", toogleTaskDone);
+
 router.get("/task/:id/edit", RenderTaskEdit);
 
 router.post("/task/:id/edit", editTask);
 
-router.get("/delete/:id", deleteTask);
-
-router.get("/toggleDone/:id", toogleTaskDone);
+router.get("/task/:id/delete", deleteTask);
 
 export default router;

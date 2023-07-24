@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   createTask,
   renderTask,
-  RendereditTask,
+  RenderTaskEdit,
   editTask,
   deleteTask,
   toogleTaskDone,
@@ -14,7 +14,7 @@ router.get("/", renderTask);
 
 router.post("/tasks/add", createTask);
 
-router.get("/edit/:id", RendereditTask);
+router.get("/task/:id/edit", RenderTaskEdit);
 
 router.post("/edit/:id", editTask);
 

@@ -12,9 +12,9 @@ const router = Router();
 
 router.get("/", renderTask);
 
-router.post("/tasks/add", createTask);
-
 router.get("/task/:id/toggleDone", toogleTaskDone);
+
+router.post("/tasks/add", createTask);
 
 router.get("/tasks/:id/edit", RenderTaskEdit);
 

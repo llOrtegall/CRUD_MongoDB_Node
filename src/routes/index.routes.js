@@ -1,11 +1,11 @@
 import { Router } from "express";
 import {
-  createTask,
   renderTask,
-  RenderTaskEdit,
+  createTask,
   editTask,
-  deleteTask,
   toogleTaskDone,
+  RenderTaskEdit,
+  deleteTask,
 } from "../controllers/task.controller";
 
 const router = Router();
@@ -16,9 +16,9 @@ router.post("/tasks/add", createTask);
 
 router.get("/task/:id/toggleDone", toogleTaskDone);
 
-router.get("/task/:id/edit", editTask);
+router.get("/tasks/:id/edit", RenderTaskEdit);
 
-router.post("/task/:id/edit", renderTask);
+router.post("/tasks/:id/edit", editTask);
 
 router.get("/task/:id/delete", deleteTask);
 

@@ -30,7 +30,7 @@ export const RenderTaskEdit = async (req, res) => {
 // TODO:
 export const editTask = async (req, res) => {
   const { id } = req.params;
-  await Task.findByIdAndUpdate(id);
+  await Task.findByIdAndUpdate(id, req.body);
   res.redirect("/");
 };
 

@@ -27,7 +27,7 @@ export const RenderTaskEdit = async (req, res) => {
   }
 };
 
-// TODO:
+// TODO: Credo para enviar nuevo formulario actualizado
 export const editTask = async (req, res) => {
   const { id } = req.params;
   await Task.findByIdAndUpdate(id, req.body);
